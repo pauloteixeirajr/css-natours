@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -17,6 +18,10 @@
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -37,7 +42,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     -webkit-transform: translateY(-1px);
     -moz-transform: translateY(-1px);
@@ -56,6 +63,7 @@
     }
   }
 
+  &--green,
   &--green:link,
   &--green:visited {
     background-color: $color-primary;
