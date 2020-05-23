@@ -22,11 +22,19 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.4s 0.2s;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
   }
 
   &__left {
     width: 33.333333333333336%;
     display: table-cell;
+
+    @include respond(phone) {
+      width: 0;
+    }
   }
 
   &__right {
@@ -34,6 +42,15 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      padding: 1rem 5rem;
+    }
+
+    @include respond(phone) {
+      padding: 1rem 3rem;
+      width: 100%;
+    }
   }
 
   &__img {
@@ -58,6 +75,20 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include respond(tab-land) {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      column-gap: 3rem;
+      -moz-column-gap: 3rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      column-gap: 2rem;
+      -moz-column-gap: 2rem;
+    }
   }
 
   // The book anchors to #popup which adds the pseudo class to the popup element
